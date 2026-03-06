@@ -1,0 +1,16 @@
+# Robots.txt for Colourflex Inks & Coatings Website
+# https://colourflex.co.tz/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://colourflex.co.tz/sitemap.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1
