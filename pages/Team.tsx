@@ -13,7 +13,7 @@ const TEAM: TeamMember[] = [
   {
     name: 'Zenobius Warwo',
     role: 'Technical Manager',
-    image: '/images/team/Zenobius Warwo.jpg',
+    image: '/images/team/Zenobius Warwo.JPG',
     bio: 'With over 15 years of experience, Zeno blends scientific precision and business acumen to oversee production, quality control, innovation, and operational planning.'
   },
   {
@@ -25,7 +25,7 @@ const TEAM: TeamMember[] = [
   {
     name: 'Stanley Bobo',
     role: 'Ink Technician',
-    image: '/images/team/Stanley Bobo.png',
+    image: '/images/team/Stanley Bobo.PNG',
     bio: 'A Chemical & Processing Systems Engineering professional ensuring accurate formulation, quality control, and safe technical production practices.'
   },
   {
