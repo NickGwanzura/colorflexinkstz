@@ -1,9 +1,14 @@
 import React from 'react';
 import { Shield, Lock, Eye } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
     <div className="pt-32 min-h-screen bg-white">
+      <SEO 
+        title="Privacy Policy" 
+        description="Colourflex privacy policy - learn how we collect, use, and protect your personal information when you visit our website."
+      />
       <div className="container mx-auto px-4 md:px-8 pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">

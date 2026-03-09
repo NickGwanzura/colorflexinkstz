@@ -3,6 +3,7 @@ import { useParams, NavLink, useNavigate } from 'react-router-dom';
 import { Calendar, User, ArrowRight, ArrowLeft, Tag } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BlogPost as BlogPostType } from '../types';
+import { SEO } from '../components/SEO';
 
 export const BLOG_POSTS: BlogPostType[] = [
   {
@@ -12,7 +13,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Sustainability',
     author: 'David Mushi',
     summary: 'How environmental regulations and consumer demand are driving the massive adoption of water-based flexo inks in East Africa.',
-    image: 'https://images.unsplash.com/photo-1550948537-130a1ce83314?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1532996122721-eba3d9307035?q=80&w=800&auto=format&fit=crop',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The packaging industry is undergoing a significant transformation. As environmental concerns take center stage globally, Tanzania is no exception. Manufacturers and brands are increasingly moving away from solvent-based systems towards water-based alternatives, driven by both regulatory compliance and a genuine commitment to sustainability.</p>
@@ -31,7 +32,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Industry News',
     author: 'Sarah Juma',
     summary: 'What brands need to know about consumer preferences in the East African market. Less is more, and smart packaging is on the rise.',
-    image: 'https://images.unsplash.com/photo-1598295627685-1d4cb800c6d5?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The shelves in Dar es Salaam's supermarkets are changing. Gone are the days of cluttered, chaotic designs. The modern consumer, overwhelmed by choice, is gravitating towards minimalist packaging that communicates value instantly and clearly.</p>
@@ -49,7 +50,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Company News',
     author: 'Admin',
     summary: 'We have upgraded our Dar es Salaam facility with state-of-the-art bead mills to improve pigment dispersion and gloss levels.',
-    image: 'https://images.unsplash.com/photo-1565619624098-e6597849403e?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">We are excited to announce the installation of two new high-speed bead mills at our production facility in the Industrial Area. This significant investment marks another milestone in our mission to provide world-class coatings to the Tanzanian market.</p>
@@ -68,6 +69,10 @@ export const BLOG_POSTS: BlogPostType[] = [
 export const Blog: React.FC = () => {
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Blog & News" 
+        description="Stay informed with the latest trends in packaging, sustainability initiatives, and company announcements from Colourflex."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -110,7 +115,9 @@ export const Blog: React.FC = () => {
               <div className="h-64 overflow-hidden relative">
                 <img 
                   src={post.image} 
-                  alt={post.title} 
+                  alt={post.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-[11px] font-bold text-brand-primary uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
@@ -161,9 +168,15 @@ export const BlogPost: React.FC = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-white">
+      <SEO 
+        title={post.title}
+        description={post.summary}
+        image={post.image}
+        type="article"
+      />
       {/* Hero Image */}
       <div className="w-full h-[50vh] relative">
-        <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+        <img src={post.image} alt={post.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-brand-dark/60" />
         <div className="absolute inset-0 flex items-center justify-center">
            <div className="container px-4 text-center text-white">

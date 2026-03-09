@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Mail, X, ArrowRight } from 'lucide-react';
 import { TeamMember } from '../types';
+import { SEO } from '../components/SEO';
 
 const TEAM: TeamMember[] = [
   {
@@ -55,7 +56,7 @@ const TEAM: TeamMember[] = [
   {
     name: 'Saidi Athumani',
     role: 'Laboratory Assistant',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop',
+    image: '/images/team/Saidi Athumani.PNG',
     bio: 'A skilled technician with nearly a decade of experience ensuring quality control, safe chemical handling, and efficient daily production.'
   }
 ];
@@ -65,6 +66,10 @@ export const Team: React.FC = () => {
 
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Our Team" 
+        description="Meet the dedicated professionals behind Colourflex. From chemical engineers to logistics specialists, our team drives innovation in ink manufacturing."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         {/* Background Gradients */}
@@ -111,7 +116,9 @@ export const Team: React.FC = () => {
                 <motion.img
                   layoutId={`image-${member.name}`}
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role} at Colourflex`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -170,7 +177,9 @@ export const Team: React.FC = () => {
                 <motion.img
                   layoutId={`image-${selectedMember.name}`}
                   src={selectedMember.image}
-                  alt={selectedMember.name}
+                  alt={`${selectedMember.name} - ${selectedMember.role}`}
+                  loading="eager"
+                  decoding="async"
                   className="w-full h-full object-cover object-top absolute inset-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:hidden"></div>

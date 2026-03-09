@@ -2,10 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { Users, History, Factory, Handshake, ArrowRight, Target, Compass, Award, Lightbulb, ShieldCheck, Heart } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const About: React.FC = () => {
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="About Us" 
+        description="Learn about Colourflex Inks & Coatings Ltd. Established in 2017, we're the leading ink manufacturer in Tanzania with global technical partnerships."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -45,7 +50,7 @@ export const About: React.FC = () => {
             className="relative group"
           >
             <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <img src="/images/about.avif" alt="Colourflex Team and Facility" className="relative rounded-[2.5rem] shadow-premium w-full z-10" />
+            <img src="/images/about.avif" alt="Colourflex Team and Facility" loading="lazy" decoding="async" className="relative rounded-[2.5rem] shadow-premium w-full z-10" />
           </motion.div>
 
           <motion.div
@@ -189,7 +194,7 @@ export const About: React.FC = () => {
         {/* Meet the Team CTA */}
         <div className="bg-white rounded-[3rem] p-12 md:p-16 border border-slate-100 shadow-premium overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           <div className="relative h-80 lg:h-[450px] rounded-[2.5rem] overflow-hidden shadow-soft">
-            <img src="/images/hero/_DSC9448.avif" alt="Colourflex Management Team" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="/images/hero/_DSC9448.avif" alt="Colourflex Management Team" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="text-center lg:text-left">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Our People</span>

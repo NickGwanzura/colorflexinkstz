@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Leaf, Palette, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 const HERO_IMAGES = [
   "/images/hero/_DSC9467.avif",
@@ -23,6 +24,10 @@ export const Home: React.FC = () => {
 
   return (
     <div className="w-full font-sans">
+      <SEO 
+        title="Home" 
+        description="Leading manufacturer of flexographic, gravure, and screen printing inks in Tanzania. Quality solutions for packaging and industrial applications."
+      />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -196,7 +201,7 @@ export const Home: React.FC = () => {
               <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
                 <div className="h-64 overflow-hidden relative">
                   <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={item.img} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   {idx === 0 && <div className="absolute top-6 right-6 z-20 bg-brand-primary text-white text-[10px] font-bold px-4 py-2 rounded-full shadow-lg uppercase tracking-wider">Top Seller</div>}
                 </div>
                 <div className="p-10 flex flex-col flex-grow">

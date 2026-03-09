@@ -19,6 +19,11 @@ export const CookieConsent: React.FC = () => {
     setIsVisible(false);
   };
 
+  const handleDecline = () => {
+    localStorage.setItem('colourflex_cookie_consent', 'false');
+    setIsVisible(false);
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -41,7 +46,7 @@ export const CookieConsent: React.FC = () => {
             </div>
             <div className="flex gap-4 w-full md:w-auto">
               <button 
-                onClick={() => setIsVisible(false)}
+                onClick={handleDecline}
                 className="flex-1 md:flex-none px-6 py-3 rounded-full border border-slate-200 text-slate-600 font-bold text-sm hover:bg-slate-50 transition-colors"
               >
                 Decline

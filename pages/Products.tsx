@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Check, FileDown, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 const PRODUCTS = [
   {
@@ -61,6 +62,10 @@ export const Products: React.FC = () => {
 
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Products" 
+        description="Explore our comprehensive range of flexographic, gravure, and screen printing inks. Water-based and solvent-based solutions for all packaging needs."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -121,7 +126,7 @@ export const Products: React.FC = () => {
               
               {/* Image Area */}
               <div className="h-72 overflow-hidden relative">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={product.image} alt={product.name} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
                 
                 <div className="absolute top-6 left-6 right-6 flex justify-between items-start">

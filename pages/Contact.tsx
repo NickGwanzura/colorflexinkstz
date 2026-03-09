@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Wrench, GraduationCap, Microscope } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -17,6 +18,10 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Colourflex for sales inquiries, technical support, colour matching services, and product training in Tanzania."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -127,7 +132,7 @@ export const Contact: React.FC = () => {
 
             {/* Simulated Map */}
             <div className="mt-16 w-full h-64 bg-slate-800 rounded-3xl flex items-center justify-center relative overflow-hidden group border border-white/10">
-               <img src="https://picsum.photos/seed/map/600/300" className="opacity-40 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Map Location" />
+               <img src="https://picsum.photos/seed/map/600/300" loading="lazy" decoding="async" className="opacity-40 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Map showing Colourflex location in Dar es Salaam" />
                <div className="absolute inset-0 flex items-center justify-center">
                  <button className="bg-white/10 backdrop-blur-md text-white font-bold px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-brand-dark transition-all">
                    View on Google Maps

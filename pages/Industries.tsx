@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 const INDUSTRIES = [
   {
@@ -31,6 +32,10 @@ const INDUSTRIES = [
 export const Industries: React.FC = () => {
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Industries Served" 
+        description="Specialized ink solutions for food & beverage, pharmaceutical, flexible packaging, and cosmetics industries in East Africa."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -72,7 +77,7 @@ export const Industries: React.FC = () => {
               <div className="w-full md:w-1/2">
                 <div className="relative rounded-[3rem] overflow-hidden shadow-premium group">
                   <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
-                  <img src={ind.image} alt={ind.title} className="w-full h-80 lg:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                  <img src={ind.image} alt={ind.title} loading="lazy" decoding="async" className="w-full h-80 lg:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
               <div className="w-full md:w-1/2">

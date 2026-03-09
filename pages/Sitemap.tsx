@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Layout, Users, Package, Factory, Leaf, MessageCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Sitemap: React.FC = () => {
   const sections = [
@@ -40,6 +41,10 @@ export const Sitemap: React.FC = () => {
 
   return (
     <div className="w-full bg-slate-50 min-h-screen">
+      <SEO 
+        title="Sitemap" 
+        description="Complete sitemap of Colourflex website. Navigate through all our pages including products, about us, team, blog, and contact information."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">

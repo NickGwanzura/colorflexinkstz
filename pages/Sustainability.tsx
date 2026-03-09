@@ -1,10 +1,15 @@
 import React from 'react';
 import { Leaf, Recycle, Droplets } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 
 export const Sustainability: React.FC = () => {
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
+      <SEO 
+        title="Sustainability" 
+        description="Discover Colourflex's commitment to eco-friendly inks, responsible manufacturing, and waste reduction in Tanzania's printing industry."
+      />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
@@ -90,7 +95,7 @@ export const Sustainability: React.FC = () => {
           viewport={{ once: true }}
           className="bg-brand-dark rounded-[3rem] overflow-hidden relative shadow-premium"
         >
-           <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop" alt="Eco Friendly Nature" className="w-full h-[500px] object-cover opacity-40 absolute inset-0" />
+           <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop" alt="Eco Friendly Nature" loading="lazy" decoding="async" className="w-full h-[500px] object-cover opacity-40 absolute inset-0" />
            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
            <div className="relative z-10 p-12 md:p-24 text-center md:text-left">
              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight max-w-xl leading-tight">Partnering for a <br/>Greener Tomorrow</h2>
