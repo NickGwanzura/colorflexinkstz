@@ -88,7 +88,7 @@ export const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-5">
               <NavLink
                 to="/products"
-                className="px-10 py-5 bg-brand-primary hover:bg-cyan-600 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-cyan-500/50 hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
+                className="px-10 py-5 bg-brand-primary hover:bg-cyan-600 text-white font-bold rounded-full transition-[colors,transform] duration-200 shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
               >
                 Explore Products <ArrowRight size={20} />
               </NavLink>
@@ -143,10 +143,10 @@ export const Home: React.FC = () => {
             <h2 className="text-section text-brand-dark">Excellence in Every Drop</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <motion.div
               whileHover={{ y: -10 }}
-              className="group p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-cyan-100 hover:shadow-premium transition-all duration-300 bg-gradient-to-b from-slate-50 to-white"
+              className="group md:col-span-2 lg:col-span-1 p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-cyan-100 hover:shadow-premium transition-[transform,box-shadow] duration-300 bg-gradient-to-b from-slate-50 to-white"
             >
               <div className="w-20 h-20 mb-8 bg-cyan-50 text-brand-primary rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
                 <Palette size={40} />
@@ -158,7 +158,7 @@ export const Home: React.FC = () => {
             </motion.div>
             <motion.div
               whileHover={{ y: -10 }}
-              className="group p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-green-100 hover:shadow-premium transition-all duration-300 bg-gradient-to-b from-slate-50 to-white"
+              className="group p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-green-100 hover:shadow-premium transition-[transform,box-shadow] duration-300 bg-gradient-to-b from-slate-50 to-white"
             >
               <div className="w-20 h-20 mb-8 bg-green-50 text-green-600 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
                 <Leaf size={40} />
@@ -170,7 +170,7 @@ export const Home: React.FC = () => {
             </motion.div>
             <motion.div
               whileHover={{ y: -10 }}
-              className="group p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-pink-100 hover:shadow-premium transition-all duration-300 bg-gradient-to-b from-slate-50 to-white"
+              className="group p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-pink-100 hover:shadow-premium transition-[transform,box-shadow] duration-300 bg-gradient-to-b from-slate-50 to-white"
             >
               <div className="w-20 h-20 mb-8 bg-pink-50 text-brand-magenta rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
                 <ShieldCheck size={40} />
@@ -222,12 +222,7 @@ export const Home: React.FC = () => {
 
       {/* Testimonials */}
       <section className="py-32 bg-brand-dark text-white overflow-hidden relative">
-        {/* Background Pattern */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute right-0 top-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute left-0 bottom-0 w-96 h-96 bg-brand-magenta rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-
+  
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
           <h2 className="text-section mb-20">Trusted by Industry Leaders</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
@@ -257,11 +252,10 @@ export const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-32 bg-brand-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
           <h2 className="text-section text-white mb-8">Ready to elevate your packaging?</h2>
           <p className="text-blue-100 mb-12 max-w-2xl mx-auto text-xl leading-relaxed">Get in touch with our technical team for a custom colour match, product trial, or a facility tour.</p>
-          <NavLink to="/contact" className="inline-block bg-white text-brand-primary font-bold px-14 py-6 rounded-full hover:bg-slate-50 hover:scale-105 hover:shadow-xl transition-all shadow-2xl text-lg">
+          <NavLink to="/contact" className="inline-block bg-white text-brand-primary font-bold px-14 py-6 rounded-full hover:bg-slate-50 transition-colors shadow-lg text-lg">
             Contact Us Today
           </NavLink>
         </div>

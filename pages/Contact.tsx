@@ -24,11 +24,6 @@ export const Contact: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-             <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-brand-primary rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-             <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand-magenta rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -58,7 +53,7 @@ export const Contact: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-2xl transition-all flex flex-col items-center text-center group border border-slate-100 h-full"
+               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group border border-slate-100 h-full"
              >
                 <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mb-8 text-brand-primary group-hover:scale-110 transition-transform">
                   <Microscope size={40} />
@@ -71,7 +66,7 @@ export const Contact: React.FC = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-2xl transition-all flex flex-col items-center text-center group border border-slate-100 h-full"
+               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group border border-slate-100 h-full"
              >
                 <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mb-8 text-brand-primary group-hover:scale-110 transition-transform">
                   <Wrench size={40} />
@@ -84,7 +79,7 @@ export const Contact: React.FC = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.2 }}
-               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-2xl transition-all flex flex-col items-center text-center group border border-slate-100 h-full"
+               className="bg-white p-12 rounded-[2.5rem] shadow-premium hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center group border border-slate-100 h-full"
              >
                 <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mb-8 text-brand-primary group-hover:scale-110 transition-transform">
                   <GraduationCap size={40} />
@@ -130,14 +125,21 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Simulated Map */}
-            <div className="mt-16 w-full h-64 bg-slate-800 rounded-3xl flex items-center justify-center relative overflow-hidden group border border-white/10">
-               <img src="https://picsum.photos/seed/map/600/300" loading="lazy" decoding="async" className="opacity-40 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Map showing Colourflex location in Dar es Salaam" />
-               <div className="absolute inset-0 flex items-center justify-center">
-                 <button className="bg-white/10 backdrop-blur-md text-white font-bold px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-brand-dark transition-all">
-                   View on Google Maps
-                 </button>
-               </div>
+            {/* Location */}
+            <div className="mt-16 w-full h-64 bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 gap-4">
+              <MapPin size={32} className="text-brand-primary" />
+              <div className="text-center">
+                <p className="font-bold text-white mb-1">Mombasa Road, Industrial Area</p>
+                <p className="text-slate-400 text-sm mb-5">Dar es Salaam, Tanzania</p>
+                <a
+                  href="https://maps.google.com/?q=Mombasa+Road+Industrial+Area+Dar+es+Salaam+Tanzania"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 backdrop-blur-md text-white font-bold px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-brand-dark transition-colors text-sm"
+                >
+                  View on Google Maps
+                </a>
+              </div>
             </div>
           </div>
 
@@ -205,7 +207,7 @@ export const Contact: React.FC = () => {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-brand-primary text-white font-bold py-5 rounded-2xl hover:bg-cyan-600 transition-all shadow-lg hover:shadow-xl mt-4 hover:scale-[1.02] active:scale-[0.98] transform duration-200"
+                className="w-full bg-brand-primary text-white font-bold py-5 rounded-2xl hover:bg-cyan-600 transition-colors duration-200 shadow-lg mt-4"
               >
                 Send Message
               </button>

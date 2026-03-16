@@ -28,11 +28,6 @@ export const About: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-          <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-brand-primary rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand-magenta rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +119,7 @@ export const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[2.5rem] shadow-premium border border-slate-100 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500"
+            className="bg-white p-12 rounded-[2.5rem] shadow-premium border border-slate-100 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
             <div className="relative z-10">
@@ -143,7 +138,7 @@ export const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white p-12 rounded-[2.5rem] shadow-premium border border-slate-100 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500"
+            className="bg-white p-12 rounded-[2.5rem] shadow-premium border border-slate-100 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-magenta/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
             <div className="relative z-10">

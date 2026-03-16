@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Trophy } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '../components/SEO';
 
@@ -212,11 +212,6 @@ export const Products: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-             <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-brand-primary rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-             <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand-magenta rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -314,33 +309,6 @@ export const Products: React.FC = () => {
           ))}
         </div>
         
-        {/* Brochure Download CTA - Contest Style */}
-        <div className="mt-32">
-          <div className="bg-brand-dark rounded-[3rem] p-12 md:p-20 text-center text-white shadow-2xl relative overflow-hidden">
-             {/* Decorative Elements */}
-             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary rounded-full blur-[150px] opacity-20 -mr-32 -mt-32 pointer-events-none"></div>
-             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-magenta rounded-full blur-[150px] opacity-20 -ml-32 -mb-32 pointer-events-none"></div>
-             
-             <div className="relative z-10 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-brand-yellow font-bold text-xs uppercase tracking-widest mb-8 border border-white/10">
-                <Trophy size={14} className="text-brand-yellow" />
-                Monthly Client Contest
-              </div>
-              <h3 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight">Win a Free Color Matching Session</h3>
-              <p className="mb-10 text-slate-300 text-lg leading-relaxed font-light">
-                Download our product catalogue this month and be automatically entered into a draw to win a complimentary, on-site color matching and troubleshooting session with our technical experts.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-brand-primary text-white font-bold px-12 py-5 rounded-full hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/30 hover:scale-105 transform duration-300">
-                  Download & Enter
-                </button>
-                <button className="bg-transparent border border-white/20 text-white font-bold px-12 py-5 rounded-full hover:bg-white hover:text-brand-dark transition-all">
-                  View Contest Rules
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

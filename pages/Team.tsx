@@ -79,12 +79,6 @@ export const Team: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
-        {/* Background Gradients */}
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-          <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-brand-primary rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand-magenta rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -133,10 +127,10 @@ export const Team: React.FC = () => {
             <p className="text-brand-primary font-bold text-xs uppercase tracking-widest mb-8">{MD.role}</p>
             <p className="text-slate-300 text-lg leading-relaxed font-light mb-10 max-w-xl">{MD.bio}</p>
             <div className="flex gap-4">
-              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-all">
+              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-colors duration-200">
                 <Linkedin size={16} /> LinkedIn
               </a>
-              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-all">
+              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-colors duration-200">
                 <Mail size={16} /> Email
               </a>
             </div>
@@ -156,7 +150,7 @@ export const Team: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white rounded-[2.5rem] overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 group hover:-translate-y-2 cursor-pointer flex flex-col h-full"
+              className="bg-white rounded-[2.5rem] overflow-hidden shadow-premium hover:shadow-xl transition-[transform,box-shadow] duration-300 group hover:-translate-y-2 cursor-pointer flex flex-col h-full"
             >
               <div className="h-96 overflow-hidden relative bg-slate-100">
                 <motion.img
@@ -259,10 +253,10 @@ export const Team: React.FC = () => {
                 <div className="mt-auto pt-10 border-t border-slate-100">
                   <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Contact & Connect</h4>
                   <div className="flex flex-wrap gap-4">
-                    <a href="#" className="flex items-center gap-3 px-8 py-4 rounded-full bg-slate-50 text-brand-dark font-bold hover:bg-[#0077b5] hover:text-white transition-all group">
+                    <a href="#" className="flex items-center gap-3 px-8 py-4 rounded-full bg-slate-50 text-brand-dark font-bold hover:bg-[#0077b5] hover:text-white transition-colors duration-200">
                       <Linkedin size={20} /> LinkedIn
                     </a>
-                    <a href="#" className="flex items-center gap-3 px-8 py-4 rounded-full bg-slate-50 text-brand-dark font-bold hover:bg-brand-primary hover:text-white transition-all group">
+                    <a href="#" className="flex items-center gap-3 px-8 py-4 rounded-full bg-slate-50 text-brand-dark font-bold hover:bg-brand-primary hover:text-white transition-colors duration-200">
                       <Mail size={20} /> Email
                     </a>
                   </div>
@@ -276,18 +270,13 @@ export const Team: React.FC = () => {
       {/* Careers CTA */}
       <section className="pb-32">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="bg-brand-primary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            {/* Abstract circles */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl -ml-16 -mt-16"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-dark opacity-20 rounded-full blur-3xl -mr-16 -mb-16"></div>
-
+          <div className="bg-brand-primary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-lg">
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Join Our Growing Team</h2>
               <p className="text-blue-100 mb-12 text-xl leading-relaxed">
                 We are always looking for talented individuals passionate about manufacturing excellence, chemical engineering, and innovation.
               </p>
-              <a href="mailto:careers@colourflex.co.tz" className="inline-block bg-white text-brand-primary font-bold px-12 py-5 rounded-full hover:bg-slate-50 transition-colors shadow-lg hover:scale-105 transform duration-300">
+              <a href="mailto:careers@colourflex.co.tz" className="inline-block bg-white text-brand-primary font-bold px-12 py-5 rounded-full hover:bg-slate-50 transition-colors shadow-lg">
                 View Open Positions
               </a>
             </div>

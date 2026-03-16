@@ -12,11 +12,6 @@ export const Sustainability: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
-        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-             <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-green-500 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-             <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-brand-primary rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -45,7 +40,7 @@ export const Sustainability: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[2.5rem] border border-green-100 shadow-premium hover:shadow-2xl transition-all h-full"
+            className="bg-white p-12 rounded-[2.5rem] border border-green-100 shadow-premium hover:shadow-xl transition-shadow duration-300 h-full"
           >
             <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-8 text-green-600">
               <Leaf size={32} />
@@ -61,7 +56,7 @@ export const Sustainability: React.FC = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="bg-white p-12 rounded-[2.5rem] border border-cyan-100 shadow-premium hover:shadow-2xl transition-all h-full"
+             className="bg-white p-12 rounded-[2.5rem] border border-cyan-100 shadow-premium hover:shadow-xl transition-shadow duration-300 h-full"
           >
             <div className="w-16 h-16 bg-cyan-50 rounded-2xl flex items-center justify-center mb-8 text-brand-primary">
               <Droplets size={32} />
@@ -77,7 +72,7 @@ export const Sustainability: React.FC = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.2 }}
-             className="bg-white p-12 rounded-[2.5rem] border border-orange-100 shadow-premium hover:shadow-2xl transition-all h-full"
+             className="bg-white p-12 rounded-[2.5rem] border border-orange-100 shadow-premium hover:shadow-xl transition-shadow duration-300 h-full"
           >
              <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8 text-orange-600">
                <Recycle size={32} />
