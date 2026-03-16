@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { Users, History, Factory, Handshake, ArrowRight, Target, Compass, Award, Lightbulb, ShieldCheck, Heart } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
+const ABOUT_IMAGES = [
+  '/images/about/_DSC9250.JPG',
+  '/images/about/_DSC9255.JPG',
+  '/images/about/_DSC9263.JPG',
+  '/images/about/_DSC9269.JPG',
+  '/images/about/_DSC9525.JPG',
+];
+
 export const About: React.FC = () => {
+  const [aboutImg, setAboutImg] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setAboutImg(i => (i + 1) % ABOUT_IMAGES.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
       <SEO 
@@ -28,7 +43,7 @@ export const About: React.FC = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-brand-primary font-bold tracking-widest uppercase text-xs mb-6 backdrop-blur-sm">
               Who We Are
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+            <h1 className="text-hero mb-8">
               Our Story
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -50,7 +65,21 @@ export const About: React.FC = () => {
             className="relative group"
           >
             <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <img src="/images/about.avif" alt="Colourflex Team and Facility" loading="lazy" decoding="async" className="relative rounded-[2.5rem] shadow-premium w-full z-10" />
+            <div className="relative rounded-[2.5rem] shadow-premium overflow-hidden w-full z-10 aspect-[4/3]">
+              {ABOUT_IMAGES.map((src, i) => (
+                <motion.img
+                  key={src}
+                  src={src}
+                  alt="Colourflex Team and Facility"
+                  loading="lazy"
+                  decoding="async"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: i === aboutImg ? 1 : 0 }}
+                  transition={{ duration: 1.2, ease: 'easeInOut' }}
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
@@ -74,7 +103,16 @@ export const About: React.FC = () => {
                 <h2 className="text-3xl font-extrabold text-brand-dark tracking-tight">Global Synergies</h2>
               </div>
               <p className="text-slate-500 leading-relaxed text-lg font-medium">
-                Our growth is fueled by strategic technical collaboration with Hi-Tech Inks Pty (India). This synergy allows us to bring world-class formulations and technical expertise to the East African market, ensuring our clients receive products that meet international standards.
+                Our growth is fueled by strategic technical collaboration with Hi-Tech Inks Pty of India — the fourth-largest ink manufacturer in the region. This synergy allows us to bring world-class formulations and technical expertise to the East African market, ensuring our clients receive products that meet international standards.
+              </p>
+            </div>
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="bg-cyan-100 p-4 rounded-2xl text-brand-primary shadow-sm"><Handshake size={28} /></div>
+                <h2 className="text-3xl font-extrabold text-brand-dark tracking-tight">Printing Consumables Partnership</h2>
+              </div>
+              <p className="text-slate-500 leading-relaxed text-lg font-medium">
+                To further support our customers, we have expanded into quality press consumables through a partnership with Barkev Coatings of South Africa, enabling us to serve as a one-stop shop for all printing requirements.
               </p>
             </div>
           </motion.div>
@@ -129,7 +167,7 @@ export const About: React.FC = () => {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Our Ethos</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight">Core Values</h2>
+            <h2 className="text-section text-brand-dark">Core Values</h2>
             <p className="text-slate-500 text-xl mt-6 leading-relaxed font-light">The principles that guide our decisions and define our culture.</p>
           </motion.div>
 
@@ -191,6 +229,36 @@ export const About: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Key Clients */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-32"
+        >
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Who We Serve</span>
+            <h2 className="text-section text-brand-dark">Trusted by Industry Leaders</h2>
+            <p className="text-slate-500 text-xl mt-6 leading-relaxed font-light">Colourflex commands a significant market share in Tanzania, supplying most of the country's quality-conscious flexible packaging converters.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              'Omar Packaging Industries Ltd',
+              'A-Z Textile Mills',
+              'The Box Factory',
+              'Jiemel Industries',
+              'Modern Flexible Packaging',
+              'Jumbo Packaging',
+              'East Africa Polybag',
+              'Hanspaul Industries',
+            ].map((client) => (
+              <div key={client} className="bg-white rounded-2xl px-6 py-5 text-center shadow-soft border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                <p className="text-brand-dark font-bold text-sm leading-snug">{client}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Meet the Team CTA */}
         <div className="bg-white rounded-[3rem] p-12 md:p-16 border border-slate-100 shadow-premium overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           <div className="relative h-80 lg:h-[450px] rounded-[2.5rem] overflow-hidden shadow-soft">
@@ -198,7 +266,7 @@ export const About: React.FC = () => {
           </div>
           <div className="text-center lg:text-left">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Our People</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-8 tracking-tight">The Minds Behind the Magic</h2>
+            <h2 className="text-section text-brand-dark mb-8">The Minds Behind the Magic</h2>
             <p className="text-slate-500 max-w-2xl mx-auto mb-12 text-xl leading-relaxed font-light">
               Our success is driven by a diverse team of experts, from chemical engineers to logistics specialists.
             </p>

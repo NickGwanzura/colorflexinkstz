@@ -1,70 +1,214 @@
 import React, { useState } from 'react';
-import { Check, FileDown, Trophy } from 'lucide-react';
+import { Check, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '../components/SEO';
 
 const PRODUCTS = [
   {
     id: '1',
-    name: 'Aquaflex Premium',
+    name: 'Aquaprint',
     category: 'Flexographic',
     type: 'Water-based',
-    description: 'High-performance water-based ink for corrugated board and paper sacks.',
-    specs: ['Fast drying', 'Excellent rub resistance', 'Low VOC'],
-    image: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=600&auto=format&fit=crop'
+    description: 'Water-based flexographic ink for corrugated board, paper sacks, and absorbent substrates.',
+    specs: ['Fast drying', 'Low VOC', 'Excellent rub resistance'],
+    image: '/images/products2/Aquaprint.PNG'
   },
   {
     id: '2',
-    name: 'SolvPack Pro',
+    name: 'Flexoprint Inks',
     category: 'Flexographic',
     type: 'Solvent-based',
-    description: 'Versatile solvent-based ink for flexible packaging films (PE, PP, PET).',
-    specs: ['High gloss', 'Strong adhesion', 'Deep freeze resistant'],
-    image: 'https://images.unsplash.com/photo-1572916194766-0708cb7b0e98?q=80&w=600&auto=format&fit=crop'
+    description: 'General-purpose solvent-based flexographic inks for a wide range of flexible packaging films.',
+    specs: ['High colour strength', 'Good adhesion', 'Consistent tone'],
+    image: '/images/products2/Flexoprint-Inks.PNG'
   },
   {
     id: '3',
-    name: 'GravureUltra',
-    category: 'Gravure',
+    name: 'Flexogloss Inks',
+    category: 'Flexographic',
     type: 'Solvent-based',
-    description: 'Premium gravure ink for high-speed printing and fine tonal gradation.',
-    specs: ['High pigment strength', 'Resolubility', 'Heat resistant'],
-    image: 'https://images.unsplash.com/photo-1615114704739-652309f4b732?q=80&w=600&auto=format&fit=crop'
+    description: 'High-gloss solvent-based flexographic inks delivering vibrant, premium surface finish.',
+    specs: ['Superior gloss', 'Strong rub resistance', 'Film & foil compatible'],
+    image: '/images/products2/Flexogloss-Inks.PNG'
   },
   {
     id: '4',
-    name: 'ScreenMaster',
-    category: 'Screen',
+    name: 'Flexoglass D/F Inks',
+    category: 'Flexographic',
     type: 'Solvent-based',
-    description: 'Durable screen printing ink for industrial labels and containers.',
-    specs: ['Weather resistant', 'High opacity', 'Chemical resistant'],
-    image: 'https://images.unsplash.com/photo-1550684847-75bdda21cc95?q=80&w=600&auto=format&fit=crop'
+    description: 'Specialised flexographic inks formulated for glass and film substrates with outstanding clarity.',
+    specs: ['High clarity', 'Excellent adhesion on glass', 'Chemical resistant'],
+    image: '/images/products2/Flexoglass-DF-Inks.PNG'
   },
   {
     id: '5',
-    name: 'EcoLabel W',
+    name: 'Labelflex Ink',
     category: 'Flexographic',
-    type: 'Water-based',
-    description: 'Environmentally friendly ink specifically designed for narrow web label printing.',
-    specs: ['Eco-friendly', 'Good flow', 'Sharp print definition'],
-    image: 'https://images.unsplash.com/photo-1585644198335-502a588b5846?q=80&w=600&auto=format&fit=crop'
+    type: 'Solvent-based',
+    description: 'Narrow-web flexographic inks engineered for self-adhesive and wet-glue label printing.',
+    specs: ['Sharp definition', 'Fast drying', 'Wide substrate compatibility'],
+    image: '/images/products2/Labelflex-Ink.PNG'
+  },
+  {
+    id: '6',
+    name: 'Polysack Inks',
+    category: 'Flexographic',
+    type: 'Solvent-based',
+    description: 'Robust flexographic inks for woven polypropylene sacks and BOPP packaging.',
+    specs: ['High opacity', 'Heat seal resistant', 'UV stable'],
+    image: '/images/products2/Polysack-Inks.PNG'
+  },
+  {
+    id: '7',
+    name: 'Polytech Inks',
+    category: 'Flexographic',
+    type: 'Solvent-based',
+    description: 'Technical flexographic inks for polyethylene and multi-layer film applications.',
+    specs: ['Excellent lay-flat', 'Consistent viscosity', 'Deep freeze rated'],
+    image: '/images/products2/Polytech-Inks.PNG'
+  },
+  {
+    id: '8',
+    name: 'Polyfreeze Inks',
+    category: 'Flexographic',
+    type: 'Solvent-based',
+    description: 'Flexographic inks designed specifically for deep-freeze and cold-chain packaging applications.',
+    specs: ['Deep freeze resistant', 'Strong adhesion at low temp', 'Crack resistant'],
+    image: '/images/products2/Polyfreeze-Inks.PNG'
+  },
+  {
+    id: '9',
+    name: 'Extruflex Inks',
+    category: 'Flexographic',
+    type: 'Solvent-based',
+    description: 'Solvent-based flexographic inks for extrusion-coated and co-extruded packaging films.',
+    specs: ['Extrusion bond compatible', 'Flexible film adhesion', 'High pigment loading'],
+    image: '/images/products2/Extruflex-Inks.PNG'
+  },
+  {
+    id: '10',
+    name: 'Extrulam Inks',
+    category: 'Flexographic',
+    type: 'Solvent-based',
+    description: 'Flexographic inks optimised for extrusion lamination, providing excellent bond strength after lamination.',
+    specs: ['Post-lamination clarity', 'Bond strength retention', 'Migration compliant'],
+    image: '/images/products2/Extrulam-Inks.PNG'
+  },
+  {
+    id: '11',
+    name: 'Rotoprint Inks',
+    category: 'Gravure',
+    type: 'Solvent-based',
+    description: 'Premium rotogravure inks for high-speed flexible packaging printing with exceptional tonal reproduction.',
+    specs: ['Fine tonal gradation', 'High speed compatible', 'Resoluble'],
+    image: '/images/products2/Rotoprint-Inks.PNG'
+  },
+  {
+    id: '12',
+    name: 'Rotofreeze Inks',
+    category: 'Gravure',
+    type: 'Solvent-based',
+    description: 'Rotogravure inks engineered for deep-freeze packaging, maintaining integrity at sub-zero temperatures.',
+    specs: ['Sub-zero performance', 'High rub resistance', 'Moisture barrier compatible'],
+    image: '/images/products2/Rotofreeze-Inks.PNG'
+  },
+  {
+    id: '13',
+    name: 'Rotolam Inks',
+    category: 'Gravure',
+    type: 'Solvent-based',
+    description: 'Rotogravure laminating inks formulated for post-print lamination on flexible packaging structures.',
+    specs: ['Lamination bond compatible', 'High clarity', 'Retort suitable'],
+    image: '/images/products2/Rotolam-Inks.PNG'
+  },
+  {
+    id: '14',
+    name: 'Petlam Inks',
+    category: 'Gravure',
+    type: 'Solvent-based',
+    description: 'Rotogravure inks for PET-based laminate structures, delivering outstanding print quality and adhesion.',
+    specs: ['PET adhesion', 'High pigment strength', 'Boil & retort resistant'],
+    image: '/images/products2/Petlam-Inks.PNG'
+  },
+  {
+    id: '15',
+    name: 'GR Laser PVC Inks',
+    category: 'Gravure',
+    type: 'Solvent-based',
+    description: 'Specialist rotogravure inks for laser-printable PVC shrink sleeves and rigid PVC packaging.',
+    specs: ['Laser compatible', 'Shrink sleeve rated', 'High gloss'],
+    image: '/images/products2/GR-Laser-PVC-Inks.PNG'
+  },
+  {
+    id: '16',
+    name: 'Pantone Formula Guides',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'Official Pantone Formula Guides for accurate colour specification and matching across all print processes.',
+    specs: ['Industry standard', 'Consistent colour reference', 'Flexo & gravure compatible'],
+    image: '/images/products/pantone-formula-guides.PNG'
+  },
+  {
+    id: '17',
+    name: 'Doctor Blades',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'Precision doctor blades for gravure and flexographic presses, ensuring clean ink metering and reduced waste.',
+    specs: ['High durability', 'Multiple material grades', 'OEM compatible'],
+    image: '/images/products/doctor-blades.PNG'
+  },
+  {
+    id: '18',
+    name: 'Treatment Test Pens',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'Dyne test pens for rapid surface energy measurement on films and substrates before printing.',
+    specs: ['Fast & accurate', 'Wide dyne range', 'Essential QC tool'],
+    image: '/images/products/treatment-test-pens.JPG'
+  },
+  {
+    id: '19',
+    name: 'End Seals',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'High-quality end seals for anilox rolls, preventing ink leakage and maintaining print consistency.',
+    specs: ['Precise fit', 'Chemical resistant', 'Extended press life'],
+    image: '/images/products/end-seals.JPG'
+  },
+  {
+    id: '20',
+    name: 'Anilox & Plate Cleaning',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'Specialised chemical cleaners and accessories for anilox rolls and printing plates, maintaining optimal cell volume.',
+    specs: ['Safe on all substrates', 'Fast acting', 'Restores cell volume'],
+    image: '/images/products/anilox-cleaning.JPG'
+  },
+  {
+    id: '21',
+    name: 'Double-Sided Mounting Tapes',
+    category: 'Accessories',
+    type: 'Accessories',
+    description: 'Premium double-sided foam mounting tapes for secure plate mounting on flexographic presses.',
+    specs: ['Consistent cushioning', 'Solvent resistant', 'Multiple hardness options'],
+    image: '/images/products/double-sided-mounting-tapes.PNG'
   },
 ];
 
 export const Products: React.FC = () => {
-  const [filter, setFilter] = useState<'All' | 'Water-based' | 'Solvent-based'>('All');
+  const [filter, setFilter] = useState<'All' | 'Water-based' | 'Solvent-based' | 'Solventless' | 'Accessories'>('All');
 
-  const filteredProducts = filter === 'All' 
-    ? PRODUCTS 
+  const filteredProducts = filter === 'All'
+    ? PRODUCTS
     : PRODUCTS.filter(p => p.type === filter);
 
-  const filters = ['All', 'Water-based', 'Solvent-based'];
+  const filters = ['All', 'Water-based', 'Solvent-based', 'Solventless', 'Accessories'];
 
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
       <SEO 
         title="Products" 
-        description="Explore our comprehensive range of flexographic, gravure, and screen printing inks. Water-based and solvent-based solutions for all packaging needs."
+        description="Explore our comprehensive range of flexographic, gravure inks, laminating adhesives, top coat varnishes, and printing consumables. Water-based, solvent-based, and solventless solutions for all packaging needs."
       />
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark text-white">
@@ -83,7 +227,7 @@ export const Products: React.FC = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-brand-primary font-bold tracking-widest uppercase text-xs mb-6 backdrop-blur-sm">
               Our Portfolio
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+            <h1 className="text-hero mb-8">
               Product Catalogue
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -125,17 +269,16 @@ export const Products: React.FC = () => {
             <div key={product.id} className="bg-white rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 group hover:-translate-y-2 border border-slate-100 flex flex-col h-full">
               
               {/* Image Area */}
-              <div className="h-72 overflow-hidden relative">
-                <img src={product.image} alt={product.name} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+              <div className="h-72 overflow-hidden relative bg-slate-50 flex items-center justify-center">
+                <img src={product.image} alt={product.name} decoding="async" className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" />
                 
                 <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
                   <span className="bg-white/95 backdrop-blur-md px-4 py-2 rounded-full text-[11px] font-bold text-brand-dark uppercase tracking-widest shadow-sm">
                     {product.category}
                   </span>
-                  {product.type === 'Water-based' && (
+                  {(product.type === 'Water-based' || product.type === 'Solventless') && (
                     <span className="bg-green-500/90 backdrop-blur-md text-white px-3 py-2 rounded-full shadow-sm">
-                       <Check size={14} strokeWidth={3} />
+                      <Check size={14} strokeWidth={3} />
                     </span>
                   )}
                 </div>
@@ -145,9 +288,9 @@ export const Products: React.FC = () => {
               <div className="p-8 md:p-10 flex flex-col flex-grow">
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest ${product.type === 'Water-based' ? 'text-green-600' : 'text-orange-600'}`}>
-                      {product.type === 'Water-based' ? 'Water System' : 'Solvent System'}
-                    </span>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest ${product.type === 'Water-based' ? 'text-green-600' : product.type === 'Solventless' ? 'text-emerald-600' : product.type === 'Accessories' ? 'text-brand-primary' : 'text-orange-600'}`}>
+                    {product.type === 'Water-based' ? 'Water System' : product.type === 'Solventless' ? 'Solventless' : product.type === 'Accessories' ? 'Accessory' : 'Solvent System'}
+                  </span>
                   </div>
                   <h3 className="text-2xl font-bold text-brand-dark tracking-tight mb-2">{product.name}</h3>
                 </div>
@@ -166,12 +309,6 @@ export const Products: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="mt-auto">
-                   <button className="w-full py-4 px-6 rounded-xl border border-slate-200 text-brand-dark font-bold text-sm flex items-center justify-center gap-2 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300 group/btn shadow-sm hover:shadow-lg">
-                     <FileDown size={18} className="text-brand-primary group-hover/btn:text-white transition-colors" />
-                     Download Brochure
-                   </button>
-                </div>
               </div>
             </div>
           ))}

@@ -70,8 +70,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
   <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <script>
     tailwind.config = {
@@ -88,8 +90,8 @@
             }
           },
           fontFamily: {
-            sans: ['"Google Sans"', 'sans-serif'],
-            serif: ['"Google Sans"', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Sora', 'Inter', 'sans-serif'],
           },
           boxShadow: {
             'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
@@ -104,6 +106,38 @@
     }
   </script>
   <style>
+    /* ── Typography tokens ────────────────────────────────────────
+       Fluid scaling via clamp(min, preferred, max).
+       Use these on h1/h2/lead text — never raw text-{size} pairs.
+    ─────────────────────────────────────────────────────────── */
+    .text-hero {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.75rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+    .text-section {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .text-headline {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .text-subhead {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 1.75vw, 1.375rem);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
     /* Smooth scrolling for anchor links */
     html {
       scroll-behavior: smooth;
@@ -111,6 +145,7 @@
 
     body {
       background-color: #f8fafc;
+      font-family: 'Inter', system-ui, sans-serif;
       font-feature-settings: "cv11", "ss01";
     }
 

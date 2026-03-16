@@ -6,8 +6,13 @@ import { SEO } from '../components/SEO';
 
 const HERO_IMAGES = [
   "/images/hero/_DSC9467.avif",
+  "/images/hero/_DSC9250.JPG",
   "/images/hero/_DSC9448.avif",
+  "/images/hero/_DSC9255.JPG",
   "/images/hero/_DSC9582.avif",
+  "/images/hero/_DSC9263.JPG",
+  "/images/hero/_DSC9269.JPG",
+  "/images/hero/_DSC9525.JPG",
   "/images/hero/buckets.avif",
   "/images/hero/warehouse_team.avif"
 ];
@@ -73,12 +78,12 @@ export const Home: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
               Leading Manufacturer in Tanzania
             </div>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold text-white mb-8 leading-[0.95] tracking-tight">
+            <h1 className="text-hero text-white mb-8">
               Quality Inks. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-magenta">Trusted Solutions.</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl leading-relaxed font-light">
-              Empowering your brand with vibrant, high-performance flexographic and gravure printing technologies. Inspiring packaging, one drop at a time.
+              Tanzania's main dedicated manufacturer of flexographic and gravure printing inks. With world-class technology, guaranteed quality, and unmatched technical support, we empower brands with reliable, innovative, and sustainable packaging solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <NavLink
@@ -135,7 +140,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Our Ethos</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight">Excellence in Every Drop</h2>
+            <h2 className="text-section text-brand-dark">Excellence in Every Drop</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -185,7 +190,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-2 block">Our Expertise</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight">Versatile Ink Solutions</h2>
+              <h2 className="text-section text-brand-dark">Versatile Ink Solutions</h2>
             </div>
             <NavLink to="/products" className="group text-brand-primary font-bold flex items-center gap-2 hover:opacity-80 transition-opacity text-lg">
               View All Products <span className="bg-brand-primary text-white rounded-full p-1.5 group-hover:translate-x-1 transition-transform"><ArrowRight size={16} /></span>
@@ -196,7 +201,7 @@ export const Home: React.FC = () => {
             {[
               { title: 'Flexographic Inks', img: 'https://images.unsplash.com/photo-1632515904536-474c6f2722b5?q=80&w=600&auto=format&fit=crop', desc: 'High-performance water and solvent-based inks for flexible packaging.' },
               { title: 'Gravure Inks', img: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop', desc: 'Exceptional print quality and depth for long-run packaging applications.' },
-              { title: 'Screen Printing Inks', img: 'https://images.unsplash.com/photo-1599583236053-1f3eb17596a2?q=80&w=600&auto=format&fit=crop', desc: 'Vibrant, durable inks suitable for various substrates and industrial uses.' }
+              { title: 'Laminating Adhesives', img: 'https://images.unsplash.com/photo-1603201667141-5a2d4c673a86?q=80&w=600&auto=format&fit=crop', desc: 'Solvent-based and solventless laminating adhesives for flexible packaging laminates.' }
             ].map((item, idx) => (
               <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
                 <div className="h-64 overflow-hidden relative">
@@ -224,7 +229,7 @@ export const Home: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-20 tracking-tight">Trusted by Industry Leaders</h2>
+          <h2 className="text-section mb-20">Trusted by Industry Leaders</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             <div className="bg-white/5 backdrop-blur-md p-12 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all">
               <div className="flex justify-center mb-8 text-brand-yellow gap-1.5">
@@ -254,7 +259,7 @@ export const Home: React.FC = () => {
       <section className="py-32 bg-brand-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight">Ready to elevate your packaging?</h2>
+          <h2 className="text-section text-white mb-8">Ready to elevate your packaging?</h2>
           <p className="text-blue-100 mb-12 max-w-2xl mx-auto text-xl leading-relaxed">Get in touch with our technical team for a custom colour match, product trial, or a facility tour.</p>
           <NavLink to="/contact" className="inline-block bg-white text-brand-primary font-bold px-14 py-6 rounded-full hover:bg-slate-50 hover:scale-105 hover:shadow-xl transition-all shadow-2xl text-lg">
             Contact Us Today

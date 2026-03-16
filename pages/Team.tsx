@@ -4,6 +4,13 @@ import { Linkedin, Mail, X, ArrowRight } from 'lucide-react';
 import { TeamMember } from '../types';
 import { SEO } from '../components/SEO';
 
+const MD = {
+  name: 'Kennedy Chisora',
+  role: 'Managing Director',
+  image: '/images/team/kennedy.JPG',
+  bio: 'Kennedy leads Colourflex Inks & Coatings Ltd. with a vision for manufacturing excellence and sustainable growth across the East African market. As Managing Director, he sets the strategic direction for 2026 and beyond — driving innovation, deepening client partnerships, and positioning Colourflex as the benchmark for ink manufacturing in East Africa.'
+};
+
 const TEAM: TeamMember[] = [
   {
     name: 'Carol N. Chisora',
@@ -44,13 +51,13 @@ const TEAM: TeamMember[] = [
   {
     name: 'Fatma Bakari',
     role: 'Data Processing Clerk',
-    image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop',
+    image: '/images/team/fatima.JPG',
     bio: 'Focused on financial accuracy, invoice processing, and administrative efficiency through her business management background.'
   },
   {
     name: 'Eva Augustino Ngowi',
     role: 'Data Processing Clerk',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
+    image: '/images/team/eva.JPG',
     bio: 'A human-resource-trained professional supporting invoice preparation, record management, and transactional accuracy.'
   },
   {
@@ -88,7 +95,7 @@ export const Team: React.FC = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-brand-primary font-bold tracking-widest uppercase text-xs mb-6 backdrop-blur-sm">
               Our People
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+            <h1 className="text-hero mb-8">
               The Experts <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-cyan-200">Behind the Ink</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -98,8 +105,47 @@ export const Team: React.FC = () => {
         </div>
       </section>
 
+      {/* Managing Director Spotlight */}
+      <section className="container mx-auto px-4 md:px-8 -mt-20 relative z-20 pb-0 pt-32">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="bg-brand-dark rounded-[3rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl"
+        >
+          {/* Photo */}
+          <div className="lg:w-2/5 h-80 lg:h-auto relative shrink-0">
+            <img
+              src={MD.image}
+              alt={`${MD.name} — ${MD.role}`}
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-brand-dark/40" />
+          </div>
+
+          {/* Content */}
+          <div className="lg:w-3/5 p-12 md:p-16 lg:p-20 flex flex-col justify-center">
+            <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-brand-primary font-bold tracking-widest uppercase text-xs mb-6 w-max">
+              Leadership · 2026
+            </span>
+            <h2 className="text-section text-white mb-3">{MD.name}</h2>
+            <p className="text-brand-primary font-bold text-xs uppercase tracking-widest mb-8">{MD.role}</p>
+            <p className="text-slate-300 text-lg leading-relaxed font-light mb-10 max-w-xl">{MD.bio}</p>
+            <div className="flex gap-4">
+              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-all">
+                <Linkedin size={16} /> LinkedIn
+              </a>
+              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white font-bold text-sm hover:bg-brand-primary hover:border-brand-primary transition-all">
+                <Mail size={16} /> Email
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Team Grid */}
-      <section className="py-32 container mx-auto px-4 md:px-8 -mt-20 relative z-20">
+      <section className="py-32 container mx-auto px-4 md:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {TEAM.map((member, index) => (
             <motion.div
@@ -119,7 +165,7 @@ export const Team: React.FC = () => {
                   alt={`${member.name} - ${member.role} at Colourflex`}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
