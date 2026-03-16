@@ -199,15 +199,13 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'Flexographic Inks', img: 'https://images.unsplash.com/photo-1632515904536-474c6f2722b5?q=80&w=600&auto=format&fit=crop', desc: 'High-performance water and solvent-based inks for flexible packaging.' },
-              { title: 'Gravure Inks', img: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop', desc: 'Exceptional print quality and depth for long-run packaging applications.' },
-              { title: 'Laminating Adhesives', img: 'https://images.unsplash.com/photo-1603201667141-5a2d4c673a86?q=80&w=600&auto=format&fit=crop', desc: 'Solvent-based and solventless laminating adhesives for flexible packaging laminates.' }
+              { title: 'Flexographic Inks', img: '/images/products2/Flexoprint-Inks.PNG', desc: 'High-performance water and solvent-based inks for flexible packaging.' },
+              { title: 'Gravure Inks', img: '/images/products2/Rotoprint-Inks.PNG', desc: 'Exceptional print quality and depth for long-run packaging applications.' },
+              { title: 'Laminating Adhesives', img: '/images/products2/Extrulam-Inks.PNG', desc: 'Solvent-based and solventless laminating adhesives for flexible packaging laminates.' }
             ].map((item, idx) => (
-              <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
-                <div className="h-64 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-                  <img src={item.img} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  {idx === 0 && <div className="absolute top-6 right-6 z-20 bg-brand-primary text-white text-[10px] font-bold px-4 py-2 rounded-full shadow-lg uppercase tracking-wider">Top Seller</div>}
+              <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-[transform,box-shadow] duration-300 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
+                <div className="h-64 overflow-hidden relative bg-slate-50 flex items-center justify-center">
+                  <img src={item.img} alt={item.title} decoding="async" className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-2xl font-extrabold mb-4 text-brand-dark group-hover:text-brand-primary transition-colors tracking-tight">{item.title}</h3>
