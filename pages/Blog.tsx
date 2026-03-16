@@ -11,17 +11,20 @@ export const BLOG_POSTS: BlogPostType[] = [
     title: 'The Shift to Water-Based Inks in Flexible Packaging',
     date: 'March 15, 2024',
     category: 'Sustainability',
-    author: 'David Mushi',
+    author: 'Admin',
     summary: 'How environmental regulations and consumer demand are driving the massive adoption of water-based flexo inks in East Africa.',
-    image: 'https://images.unsplash.com/photo-1532996122721-eba3d9307035?q=80&w=800&auto=format&fit=crop',
+    image: '/images/hero/buckets.jpg',
     content: (
       <>
-        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The packaging industry is undergoing a significant transformation. As environmental concerns take center stage globally, Tanzania is no exception. Manufacturers and brands are increasingly moving away from solvent-based systems towards water-based alternatives, driven by both regulatory compliance and a genuine commitment to sustainability.</p>
+        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The packaging industry is undergoing a significant transformation. As environmental concerns take centre stage globally, Tanzania and the broader East African region are no exception. Manufacturers and brands are increasingly moving away from solvent-based systems towards water-based alternatives, driven by both tightening regulatory compliance and a genuine commitment to sustainability. This is not a passing trend. It is a fundamental shift in how the industry operates.</p>
         <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Why Water-Based?</h3>
-        <p className="mb-6 leading-relaxed text-slate-700">Water-based inks offer a substantial reduction in Volatile Organic Compounds (VOCs). Unlike their solvent counterparts, which release harmful chemicals into the atmosphere during drying, water-based inks primarily evaporate water. This not only makes the workplace safer for our print operators but also significantly reduces the carbon footprint of the final packaging.</p>
-        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Performance without Compromise</h3>
-        <p className="mb-6 leading-relaxed text-slate-700">Historically, there was a misconception that eco-friendly meant lower quality. That is no longer the case. At Colourflex, our 'Aquaflex Premium' range demonstrates that you can achieve high vibrancy, excellent rub resistance, and fast drying times on corrugated boards and paper sacks without the environmental cost.</p>
-        <p className="leading-relaxed text-slate-700">As we look towards 2025, we anticipate this trend will only accelerate, with more investments in drying technologies allowing water-based inks to perform effectively even on non-porous films.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">Water-based inks offer a substantial reduction in Volatile Organic Compounds (VOCs). Unlike their solvent counterparts, which release harmful chemicals into the atmosphere during the drying process, water-based inks primarily evaporate water. This makes the workplace significantly safer for print operators who are exposed to inks on a daily basis, and it also reduces the overall carbon footprint of the final packaging product. For brands that are increasingly scrutinised by environmentally conscious consumers, this distinction matters greatly.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">From a regulatory standpoint, international guidelines around packaging safety are becoming stricter, particularly for food contact applications. Water-based inks are inherently better positioned to meet these requirements, especially as Tanzania aligns more closely with international standards driven by export demand to European and North American markets.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Performance Without Compromise</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">Historically, there was a widespread misconception that eco-friendly meant lower quality. Printers were reluctant to make the switch, fearing loss of colour vibrancy, slower press speeds, or adhesion failures on challenging substrates. That is no longer the case. At Colourflex, our Aquaprint range demonstrates that you can achieve high vibrancy, excellent rub resistance, and fast drying times on corrugated boards and paper sacks without the environmental cost.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">Advances in resin chemistry and pigment technology have closed the performance gap considerably. Today's water-based formulations are capable of delivering the kind of colour depth and consistency that was once the exclusive territory of solvent-based systems. The key lies in proper press set-up, substrate preparation, and working with a technically capable ink supplier who can support the transition with hands-on expertise.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">The Road Ahead</h3>
+        <p className="leading-relaxed text-slate-700">As we move further into 2025 and beyond, we anticipate this trend will only accelerate across East Africa. Investment in improved drying technologies, including infrared and hot air systems, will allow water-based inks to perform effectively even on non-porous films such as BOPP and PE. Colourflex is actively investing in formulation development to ensure our water-based range continues to expand, giving our clients more options to meet their sustainability targets without sacrificing the print quality their brands demand.</p>
       </>
     )
   },
@@ -30,16 +33,18 @@ export const BLOG_POSTS: BlogPostType[] = [
     title: 'Top Packaging Trends for 2025: Minimalist & Smart',
     date: 'February 28, 2024',
     category: 'Industry News',
-    author: 'Sarah Juma',
+    author: 'Admin',
     summary: 'What brands need to know about consumer preferences in the East African market. Less is more, and smart packaging is on the rise.',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop',
+    image: '/images/hero/_DSC9255.JPG',
     content: (
       <>
-        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The shelves in Dar es Salaam's supermarkets are changing. Gone are the days of cluttered, chaotic designs. The modern consumer, overwhelmed by choice, is gravitating towards minimalist packaging that communicates value instantly and clearly.</p>
-        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Clean Labeling</h3>
-        <p className="mb-6 leading-relaxed text-slate-700">Transparency is key. Consumers want to know what they are buying. This trend towards 'clean labeling' extends to the design itself—using clear typography, ample whitespace, and bold, singular colors to create a sense of trust and premium quality. Our high-pigment gravure inks are perfect for achieving these solid, consistent brand colors.</p>
-        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Smart Integration</h3>
-        <p className="leading-relaxed text-slate-700">We are also seeing early adoption of QR codes integrated directly into packaging designs, linking consumers to supply chain stories or authenticity verifications. Printing these codes requires high-definition capabilities to ensure scannability, an area where Colourflex inks excel.</p>
+        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The shelves in Dar es Salaam's supermarkets are changing. Gone are the days of cluttered, chaotic packaging designs competing for attention with every colour in the spectrum. The modern consumer, overwhelmed by choice and increasingly informed about what they are purchasing, is gravitating towards packaging that communicates value instantly and clearly. Minimalism is no longer just a Western aesthetic preference. It is becoming a commercial imperative in East Africa.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Clean Labelling and Transparency</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">Transparency is at the heart of this shift. Consumers want to understand what they are buying, where it came from, and what it contains. This trend towards clean labelling extends beyond the ingredients list to the design itself. Brands are increasingly choosing clear typography, generous whitespace, and bold singular colours to create a sense of trust and premium quality. For ink manufacturers like Colourflex, this means the demand for high-purity, consistent pigments that render exactly the intended colour every single time has never been greater. Our high-pigment gravure and flexographic inks are specifically formulated to deliver the flat, consistent solids that minimalist packaging demands.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">This trend is particularly relevant for food and beverage brands in Tanzania, where consumer trust is a hard-won asset. A clean, well-printed label signals quality and professionalism far more effectively than an overcrowded design, regardless of the product inside.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Smart Packaging Integration</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">Beyond aesthetics, we are also witnessing early but accelerating adoption of smart packaging features across the region. QR codes integrated directly into packaging designs are linking consumers to supply chain stories, authenticity verifications, and loyalty programmes. For agricultural exporters and pharmaceutical manufacturers in particular, traceability is becoming a non-negotiable requirement from international buyers.</p>
+        <p className="leading-relaxed text-slate-700">Printing these codes accurately requires high-definition ink performance. A QR code printed with an ink that bleeds, fades, or varies in density between print runs is functionally useless. This is an area where Colourflex inks consistently excel, thanks to our rigorous quality control processes and the superior particle size consistency of our pigment dispersions. As smart packaging adoption grows across East Africa, we are committed to ensuring our inks remain the reliable foundation that our clients can build these innovations on.</p>
       </>
     )
   },
@@ -50,17 +55,18 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Company News',
     author: 'Admin',
     summary: 'We have upgraded our Dar es Salaam facility with state-of-the-art bead mills to improve pigment dispersion and gloss levels.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
+    image: '/images/hero/_DSC9263.JPG',
     content: (
       <>
-        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">We are excited to announce the installation of two new high-speed bead mills at our production facility in the Industrial Area. This significant investment marks another milestone in our mission to provide world-class coatings to the Tanzanian market.</p>
-        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">What This Means for You</h3>
-        <ul className="list-disc pl-5 mb-6 space-y-3 text-slate-700">
-          <li><strong className="text-brand-dark">Finer Grinds:</strong> Better pigment dispersion means higher color strength. You can achieve the same vibrancy with a thinner ink film, saving money.</li>
-          <li><strong className="text-brand-dark">Higher Gloss:</strong> The improved particle size distribution results in superior gloss levels for our solvent-based range.</li>
-          <li><strong className="text-brand-dark">Faster Turnaround:</strong> Increased capacity means we can handle larger bulk orders with shorter lead times.</li>
-        </ul>
-        <p className="leading-relaxed text-slate-700">We invite our partners to visit the facility and see the new machinery in action. Contact our sales team to schedule a tour.</p>
+        <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">We are pleased to announce the installation of two new high-speed bead mills at our production facility on Mombasa Road, Dar es Salaam. This significant capital investment marks another important milestone in our ongoing mission to provide world-class ink and coating solutions to the Tanzanian and broader East African market. It reflects our confidence in the growth of the regional packaging industry and our commitment to staying ahead of client demand.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">What Are Bead Mills and Why Do They Matter?</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">Bead mills are the core processing equipment in ink manufacturing. They use tiny grinding beads to break down pigment agglomerates into fine, uniform particles dispersed evenly throughout the ink vehicle. The fineness of this grind directly determines the colour strength, gloss, transparency, and stability of the final ink. A superior grind means stronger colour from less pigment, better rub resistance, and a more consistent result print after print. For our clients, this translates directly into lower ink consumption and more predictable production outcomes.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">The two new mills we have installed are rated for high-speed, high-throughput dispersion, significantly increasing our daily production capacity while simultaneously improving the quality ceiling of our entire product range. They handle both solvent-based and water-based systems, making them versatile additions to our manufacturing floor.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">What This Means for Our Clients</h3>
+        <p className="mb-6 leading-relaxed text-slate-700">The most immediate benefit for our clients is finer grinds across our solvent-based gravure and flexographic ranges. Better pigment dispersion means higher colour strength per kilogram of ink, so you can achieve the same vibrancy with a thinner ink film. Over a long production run, this has a measurable impact on cost. The improved particle size distribution also results in superior gloss levels, which is particularly valuable for clients printing high-end consumer goods packaging where shelf presence is a competitive advantage.</p>
+        <p className="mb-6 leading-relaxed text-slate-700">Beyond quality, the capacity expansion means we can now handle larger bulk orders with significantly shorter lead times. This has been one of the most consistent requests from our growing client base, and we are proud to now be in a position to meet it reliably. Whether you are running a large-scale production campaign or need a rapid response to an urgent order, our enhanced facility is ready to deliver.</p>
+        <h3 className="text-2xl font-bold mt-10 mb-4 text-brand-dark tracking-tight">Visit Us</h3>
+        <p className="leading-relaxed text-slate-700">We warmly invite our partners and prospective clients to visit the facility and see the new machinery in action. Seeing the production process firsthand is one of the best ways to understand the care and technical rigour that goes into every batch of Colourflex ink. Contact our sales team to schedule a facility tour at a time that suits you.</p>
       </>
     )
   }
@@ -90,7 +96,7 @@ export const Blog: React.FC = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-brand-primary font-bold tracking-widest uppercase text-xs mb-6 backdrop-blur-sm">
               Industry Insights
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+            <h1 className="text-hero mb-8">
               News & Updates
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -114,9 +120,8 @@ export const Blog: React.FC = () => {
             >
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src={post.image} 
+                  src={post.image}
                   alt={post.title}
-                  loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                 />
@@ -176,7 +181,7 @@ export const BlogPost: React.FC = () => {
       />
       {/* Hero Image */}
       <div className="w-full h-[50vh] relative">
-        <img src={post.image} alt={post.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img src={post.image} alt={post.title} decoding="async" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-brand-dark/60" />
         <div className="absolute inset-0 flex items-center justify-center">
            <div className="container px-4 text-center text-white">
