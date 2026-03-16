@@ -204,7 +204,7 @@ export const Home: React.FC = () => {
               { title: 'Laminating Adhesives', img: '/images/products2/Extrulam-Inks.PNG', desc: 'Solvent-based and solventless laminating adhesives for flexible packaging laminates.' }
             ].map((item, idx) => (
               <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-[transform,box-shadow] duration-300 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
-                <div className="h-64 overflow-hidden relative bg-slate-50 flex items-center justify-center">
+                <div className="h-64 overflow-hidden relative bg-white flex items-center justify-center">
                   <img src={item.img} alt={item.title} decoding="async" className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-10 flex flex-col flex-grow">
