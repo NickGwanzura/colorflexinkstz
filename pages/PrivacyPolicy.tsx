@@ -63,10 +63,11 @@ export const PrivacyPolicy: React.FC = () => {
             <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
             <p>
                 <strong>Colourflex Inks & Coatings Ltd.</strong><br/>
-                Plot 123, Industrial Area<br/>
+                Plot 12B, Industrial Area<br/>
+                Vingunguti<br/>
                 Dar es Salaam, Tanzania<br/>
-                Email: info@colourflex.co.tz<br/>
-                Phone: +255 123 456 789
+                Email: info@colourflexinks.co.tz<br/>
+                Phone: +255755186916 / +255715292916
             </p>
           </div>
         </div>

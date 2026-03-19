@@ -197,22 +197,56 @@ export const Home: React.FC = () => {
             </NavLink>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Flexographic Inks', img: '/images/products2/Flexoprint-Inks.PNG', desc: 'High-performance water and solvent-based inks for flexible packaging.' },
-              { title: 'Gravure Inks', img: '/images/products2/Rotoprint-Inks.PNG', desc: 'Exceptional print quality and depth for long-run packaging applications.' },
-              { title: 'Laminating Adhesives', img: '/images/products2/Extrulam-Inks.PNG', desc: 'Solvent-based and solventless laminating adhesives for flexible packaging laminates.' }
+              { title: 'Flexographic Inks', img: '/images/products2/Flexoprint-Inks.PNG', desc: 'High-performance water and solvent-based inks for flexible packaging.', glowColor: '#2cabe2', bar: 'from-[#2cabe2] to-cyan-300' },
+              { title: 'Rotogravure Inks', img: '/images/products2/Rotoprint-Inks.PNG', desc: 'Exceptional print quality and depth for long-run packaging applications.', glowColor: '#e8078a', bar: 'from-[#e8078a] to-pink-400' },
+              { title: 'Accessories', img: '/images/products/doctor-blades.PNG', desc: 'Premium consumables including doctor blades, mounting tapes, and colour guides.', glowColor: '#faed1f', bar: 'from-[#faed1f] to-amber-300' }
             ].map((item, idx) => (
-              <div key={idx} className="group glass-container rounded-[2.5rem] overflow-hidden shadow-soft hover:shadow-premium transition-[transform,box-shadow] duration-300 hover:-translate-y-2 border border-white/10 flex flex-col h-full">
-                <div className="h-64 overflow-hidden relative bg-white flex items-center justify-center">
-                  <img src={item.img} alt={item.title} decoding="async" className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-700" />
+              <NavLink
+                to="/products"
+                key={idx}
+                className="group relative bg-white rounded-[2rem] overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-500 hover:-translate-y-3"
+                style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
+                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 28px 64px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.07)')}
+                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 2px 20px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)')}
+              >
+                {/* White image stage — matches white-bg PNGs for a clean look */}
+                <div className="relative h-72 bg-white flex items-center justify-center overflow-hidden">
+                  {/* Soft coloured radial tint */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse 70% 70% at 50% 60%, ${item.glowColor}18, transparent)` }}
+                  />
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    decoding="async"
+                    className="relative z-10 h-48 w-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                  />
+                  {/* Index badge */}
+                  <span className="absolute top-5 left-5 z-20 text-[10px] font-extrabold tracking-widest uppercase text-slate-400 bg-slate-100 rounded-full px-3 py-1.5">
+                    0{idx + 1}
+                  </span>
                 </div>
-                <div className="p-10 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-extrabold mb-4 text-brand-dark group-hover:text-brand-primary transition-colors tracking-tight">{item.title}</h3>
-                  <p className="text-slate-500 mb-8 text-base leading-relaxed flex-grow font-medium">{item.desc}</p>
-                  <span className="text-brand-primary font-bold text-sm border-b-2 border-transparent group-hover:border-brand-primary transition-all w-max">Learn more</span>
+
+                {/* Content */}
+                <div className="px-7 pt-6 pb-7 flex flex-col flex-grow">
+                  <h3 className="text-xl font-extrabold text-brand-dark mb-2 tracking-tight leading-tight group-hover:text-brand-primary transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed flex-grow mb-6 font-medium">
+                    {item.desc}
+                  </p>
+                  <div className="flex items-center gap-2 text-brand-primary font-extrabold text-sm">
+                    Explore Range
+                    <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </div>
                 </div>
-              </div>
+
+                {/* Slide-in accent bar on hover */}
+                <div className={`h-[3px] bg-gradient-to-r ${item.bar} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+              </NavLink>
             ))}
           </div>
         </div>

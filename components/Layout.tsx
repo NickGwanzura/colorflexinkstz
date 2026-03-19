@@ -52,11 +52,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className={`w-full bg-brand-dark text-slate-400 text-[11px] font-medium tracking-wide uppercase transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-12 py-2.5 opacity-100 border-b border-white/5'}`}>
           <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
             <div className="flex items-center gap-6">
-              <a href="tel:+255123456789" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone size={12} className="text-brand-primary" /> +255 123 456 789
+              <a href="tel:+255755186916" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone size={12} className="text-brand-primary" /> +255755186916
               </a>
-              <a href="mailto:info@colourflex.co.tz" className="hidden sm:flex items-center gap-2 hover:text-white transition-colors">
-                <Mail size={12} className="text-brand-primary" /> info@colourflex.co.tz
+              <a href="mailto:info@colourflexinks.co.tz" className="hidden sm:flex items-center gap-2 hover:text-white transition-colors">
+                <Mail size={12} className="text-brand-primary" /> info@colourflexinks.co.tz
               </a>
               <span className="hidden md:flex items-center gap-2">
                 <MapPin size={12} className="text-brand-primary" /> Dar es Salaam, Tanzania
@@ -64,7 +64,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
             <div className="flex items-center gap-4">
               <span className="hidden sm:flex items-center gap-2 mr-4">
-                <Clock size={12} className="text-brand-primary" /> Mon - Fri: 08:00 - 17:00
+                <Clock size={12} className="text-brand-primary" /> Mon–Fri: 08:00–17:00 | Sat: 08:00–13:00
               </span>
               <div className="flex items-center gap-3 border-l border-white/10 pl-4">
                 <a href="#" className="hover:text-white transition-colors"><Linkedin size={14} /></a>
@@ -76,9 +76,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         </div>
 
         {/* Main Navbar */}
-        <div className={`w-full transition-all duration-300 ${useSolidHeader
-          ? 'glass-container shadow-premium py-3'
-          : 'bg-transparent py-4 md:py-6'
+        <div className={`w-full transition-all duration-500 ${useSolidHeader
+          ? 'glass-container py-3'
+          : 'glass-nav-hero py-4 md:py-6'
           }`}>
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex justify-between items-center">
@@ -87,7 +87,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img
                   src="/images/logo/Untitled-2.svg"
                   alt="Colourflex Logo"
-                  className={`h-12 md:h-16 w-auto transition-all duration-300 ${!useSolidHeader ? '' : 'filter brightness-0'}`}
+                  className="h-16 md:h-24 w-auto transition-all duration-300"
                 />
               </NavLink>
 
@@ -100,9 +100,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     className={({ isActive }) =>
                       `px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${isActive
                         ? 'bg-brand-primary text-white shadow-md'
-                        : useSolidHeader
-                          ? 'text-slate-600 hover:text-brand-primary hover:bg-slate-50'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                        : 'text-white/80 hover:text-white hover:bg-white/10'
                       }`
                     }
                   >
@@ -169,13 +167,16 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   <div className="w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center text-brand-primary">
                     <Phone size={18} />
                   </div>
-                  <span className="font-medium text-lg">+255 123 456 789</span>
+                  <div>
+                    <div className="font-medium text-lg">+255755186916</div>
+                    <div className="font-medium text-lg">+255715292916</div>
+                  </div>
                 </div>
                 <div className="flex items-center gap-4 text-slate-600">
                   <div className="w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center text-brand-primary">
                     <Mail size={18} />
                   </div>
-                  <span className="font-medium text-lg">info@colourflex.co.tz</span>
+                  <span className="font-medium text-lg">info@colourflexinks.co.tz</span>
                 </div>
                 <div className="flex items-center gap-4 text-slate-600">
                   <div className="w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center text-brand-primary">
@@ -232,7 +233,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img
                   src="/images/logo/Untitled-2.svg"
                   alt="Colourflex Logo"
-                  className="h-16 md:h-20 w-auto object-contain -ml-4"
+                  className="h-20 md:h-24 w-auto object-contain -ml-4"
                 />
               </div>
               <p className="text-slate-400 leading-relaxed pr-6">
@@ -278,7 +279,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   </div>
                   <div>
                     <span className="block text-white font-medium mb-1">Headquarters</span>
-                    <span className="text-slate-400 text-sm leading-relaxed">Plot 123, Industrial Area,<br />Dar es Salaam, Tanzania</span>
+                    <span className="text-slate-400 text-sm leading-relaxed">Plot 12B, Industrial Area,<br />Vingunguti, Dar es Salaam, Tanzania</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4 group">
@@ -287,7 +288,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   </div>
                   <div>
                     <span className="block text-white font-medium mb-1">Phone</span>
-                    <span className="text-slate-400 text-sm">+255 123 456 789</span>
+                    <span className="text-slate-400 text-sm">+255755186916<br />+255715292916</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4 group">
@@ -296,7 +297,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   </div>
                   <div>
                     <span className="block text-white font-medium mb-1">Email</span>
-                    <span className="text-slate-400 text-sm">info@colourflex.co.tz</span>
+                    <span className="text-slate-400 text-sm">info@colourflexinks.co.tz</span>
                   </div>
                 </li>
               </ul>

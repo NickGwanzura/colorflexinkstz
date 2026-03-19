@@ -211,7 +211,7 @@ export const About: React.FC = () => {
               <div className="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm mb-6">
                 <Users size={40} className="text-cyan-300" />
               </div>
-              <h3 className="text-5xl md:text-6xl font-extrabold">50+</h3>
+              <h3 className="text-5xl md:text-6xl font-extrabold">30+</h3>
               <p className="text-slate-400 font-bold tracking-wide uppercase text-sm">Expert Staff Members</p>
             </div>
             <div className="space-y-4">

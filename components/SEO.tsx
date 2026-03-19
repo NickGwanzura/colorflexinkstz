@@ -9,13 +9,13 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({ 
   title, 
-  description = "Colourflex Inks & Coatings Ltd. - Premium flexographic, gravure, and screen printing ink manufacturing in Dar es Salaam, Tanzania.",
+  description = "Colourflex Inks & Coatings Ltd. — Tanzania's leading manufacturer of flexographic, rotogravure, and screen printing inks. Based in Dar es Salaam, serving East Africa.",
   image = "https://colourflex.co.tz/images/og-image.jpg",
   type = 'website'
 }) => {
   useEffect(() => {
     // Update title
-    document.title = `${title} | Colourflex`;
+    document.title = `${title} | Colourflex Inks & Coatings Ltd.`;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');

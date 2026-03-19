@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO';
 const MD = {
   name: 'Kennedy Chisora',
   role: 'Managing Director',
-  image: '/images/team/kennedy.JPG',
+  image: '',
   bio: 'Kennedy leads Colourflex Inks & Coatings Ltd. with a vision for manufacturing excellence and sustainable growth across the East African market. As Managing Director, he sets the strategic direction for 2026 and beyond — driving innovation, deepening client partnerships, and positioning Colourflex as the benchmark for ink manufacturing in East Africa.'
 };
 
@@ -16,7 +16,7 @@ const TEAM: TeamMember[] = [
     name: 'Carol N. Chisora',
     role: 'Administrative Manager',
     image: '/images/team/Carol.avif',
-    bio: 'Carol brings academic depth and practical leadership rooted in sociology, development studies, and business administration. She ensures smooth operations, strategic alignment, and a culture of excellence across the organisation.'
+    bio: 'Carol brings academic depth and practical leadership rooted in Human and Economic Development and Business Administration. She ensures smooth operations, strategic alignment, and a culture of excellence across the organisation.'
   },
   {
     name: 'Zenobius Warwo',
@@ -109,12 +109,11 @@ export const Team: React.FC = () => {
           className="bg-brand-dark rounded-[3rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl"
         >
           {/* Photo */}
-          <div className="lg:w-2/5 h-80 lg:h-auto relative shrink-0">
-            <img
-              src={MD.image}
-              alt={`${MD.name} — ${MD.role}`}
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
+          <div className="lg:w-2/5 h-80 lg:h-auto relative shrink-0 bg-slate-800 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-4 text-white/40">
+              <div className="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center text-5xl font-extrabold text-white/60">KC</div>
+              <span className="text-sm font-medium tracking-widest uppercase">Image Coming Soon</span>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-brand-dark/40" />
           </div>
 
@@ -246,7 +245,7 @@ export const Team: React.FC = () => {
                 <div className="prose prose-lg prose-slate text-slate-500 leading-relaxed mb-12 font-medium">
                   <p>{selectedMember.bio}</p>
                   <p>
-                    At Colourflex, {selectedMember.name.split(' ')[0]} plays a pivotal role in maintaining our high standards. Their dedication to the craft and deep industry knowledge contributes significantly to our client satisfaction and operational efficiency.
+                    At Colourflex, {selectedMember.name.split(' ')[0]} plays a pivotal role in maintaining our high standards. This dedication to the craft and deep industry knowledge contributes significantly to our client satisfaction and operational efficiency.
                   </p>
                 </div>
 

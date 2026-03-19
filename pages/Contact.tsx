@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl mb-2">Visit Us</h3>
-                  <p className="text-slate-300 leading-relaxed text-lg">Plot 123, Industrial Area,<br />Dar es Salaam, Tanzania</p>
+                  <p className="text-slate-300 leading-relaxed text-lg">Plot 12B, Industrial Area,<br />Vingunguti, Dar es Salaam, Tanzania</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -111,7 +111,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl mb-2">Email Us</h3>
-                  <p className="text-slate-300 leading-relaxed text-lg">info@colourflex.co.tz<br />support@colourflex.co.tz</p>
+                  <p className="text-slate-300 leading-relaxed text-lg">info@colourflexinks.co.tz</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-xl mb-2">Call Us</h3>
-                  <p className="text-slate-300 leading-relaxed text-lg">+255 123 456 789<br />Mon-Fri, 8am - 5pm</p>
+                  <p className="text-slate-300 leading-relaxed text-lg">+255755186916<br />+255715292916<br /><span className="text-slate-400 text-sm">Mon – Friday: 8:00 AM – 5:00 PM<br />Saturday: 8:00 AM – 1:00 PM</span></p>
                 </div>
               </div>
             </div>
@@ -129,15 +129,15 @@ export const Contact: React.FC = () => {
             <div className="mt-16 w-full h-64 bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 gap-4">
               <MapPin size={32} className="text-brand-primary" />
               <div className="text-center">
-                <p className="font-bold text-white mb-1">Mombasa Road, Industrial Area</p>
-                <p className="text-slate-400 text-sm mb-5">Dar es Salaam, Tanzania</p>
+                <p className="font-bold text-white mb-1">Colourflex Inks and Coatings Limited</p>
+                <p className="text-slate-400 text-sm mb-5">Plot 12B, Industrial Area, Vingunguti,<br />Dar es Salaam, Tanzania</p>
                 <a
-                  href="https://maps.google.com/?q=Mombasa+Road+Industrial+Area+Dar+es+Salaam+Tanzania"
+                  href="https://maps.google.com/?q=Colourflex+Inks+and+Coatings+Limited,+Vingunguti,+Dar+es+Salaam,+Tanzania"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 backdrop-blur-md text-white font-bold px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-brand-dark transition-colors text-sm"
                 >
-                  View on Google Maps
+                  VIEW US ON GOOGLE MAPS
                 </a>
               </div>
             </div>
