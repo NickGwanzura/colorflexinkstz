@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { Users, History, Factory, Handshake, ArrowRight, Target, Compass, Award, Lightbulb, ShieldCheck, Heart } from 'lucide-react';
+import { History, Handshake, ArrowRight, Target, Compass, Award, Lightbulb, ShieldCheck, Heart } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 const ABOUT_IMAGES = [
-  '/images/about/_DSC9250.JPG',
-  '/images/about/_DSC9255.JPG',
-  '/images/about/_DSC9263.JPG',
-  '/images/about/_DSC9269.JPG',
-  '/images/about/_DSC9525.JPG',
+  '/images/about/_DSC9250.webp',
+  '/images/about/_DSC9255.webp',
+  '/images/about/_DSC9263.webp',
+  '/images/about/_DSC9269.webp',
+  '/images/about/_DSC9525.webp',
 ];
 
 export const About: React.FC = () => {
@@ -22,8 +22,8 @@ export const About: React.FC = () => {
 
   return (
     <div className="w-full bg-slate-50 min-h-screen font-sans">
-      <SEO 
-        title="About Us" 
+      <SEO
+        title="About Us"
         description="Learn about Colourflex Inks & Coatings Ltd. Established in 2017, we're the leading ink manufacturer in Tanzania with global technical partnerships."
       />
       {/* Hero Section */}
@@ -61,19 +61,17 @@ export const About: React.FC = () => {
           >
             <div className="absolute -inset-4 bg-brand-primary/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative rounded-[2.5rem] shadow-premium overflow-hidden w-full z-10 aspect-[4/3]">
-              {ABOUT_IMAGES.map((src, i) => (
-                <motion.img
-                  key={src}
-                  src={src}
-                  alt="Colourflex Team and Facility"
-                  loading="lazy"
-                  decoding="async"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: i === aboutImg ? 1 : 0 }}
-                  transition={{ duration: 1.2, ease: 'easeInOut' }}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                />
-              ))}
+              <motion.img
+                key={aboutImg}
+                src={ABOUT_IMAGES[aboutImg]}
+                alt="Colourflex Team and Facility"
+                loading="lazy"
+                decoding="async"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.2, ease: 'easeInOut' }}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
             </div>
           </motion.div>
 
@@ -191,39 +189,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Facility & Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-brand-dark rounded-[3rem] text-white p-12 md:p-20 mb-32 shadow-premium relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-brand-primary opacity-20 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan-400 to-transparent"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center relative z-10">
-            <div className="space-y-4">
-              <div className="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm mb-6">
-                <Factory size={40} className="text-cyan-300" />
-              </div>
-              <h3 className="text-5xl md:text-6xl font-extrabold">Modern</h3>
-              <p className="text-slate-400 font-bold tracking-wide uppercase text-sm">Production Facility</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm mb-6">
-                <Users size={40} className="text-cyan-300" />
-              </div>
-              <h3 className="text-5xl md:text-6xl font-extrabold">30+</h3>
-              <p className="text-slate-400 font-bold tracking-wide uppercase text-sm">Expert Staff Members</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm mb-6">
-                <Handshake size={40} className="text-cyan-300" />
-              </div>
-              <h3 className="text-5xl md:text-6xl font-extrabold">100+</h3>
-              <p className="text-slate-400 font-bold tracking-wide uppercase text-sm">Satisfied Corporate Clients</p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Key Clients */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -234,7 +199,7 @@ export const About: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Who We Serve</span>
             <h2 className="text-section text-brand-dark">Trusted by Industry Leaders</h2>
-            <p className="text-slate-500 text-xl mt-6 leading-relaxed font-light">Colourflex commands a significant market share in Tanzania, supplying most of the country's quality-conscious flexible packaging converters.</p>
+            <p className="text-slate-500 text-xl mt-6 leading-relaxed font-light">Colourflex commands a significant market share in Tanzania, supplying most of the country&apos;s quality-conscious flexible packaging converters.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -257,7 +222,7 @@ export const About: React.FC = () => {
         {/* Meet the Team CTA */}
         <div className="bg-white rounded-[3rem] p-12 md:p-16 border border-slate-100 shadow-premium overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           <div className="relative h-80 lg:h-[450px] rounded-[2.5rem] overflow-hidden shadow-soft">
-            <img src="/images/hero/_DSC9448.avif" alt="Colourflex Management Team" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="/images/hero/_DSC9448.webp" alt="Colourflex Management Team" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="text-center lg:text-left">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-xs mb-4 block">Our People</span>

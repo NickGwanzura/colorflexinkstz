@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Typography tokens ────────────────────────────────────────
+   Fluid scaling via clamp(min, preferred, max).
+   Use these on h1/h2/lead text — never raw text-{size} pairs.
+─────────────────────────────────────────────────────────── */
+@layer components {
+  .text-hero {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .text-section {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .text-headline {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .text-subhead {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.75vw, 1.375rem);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glass-container {
+  background: rgba(10, 18, 38, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255,255,255,0.05) inset;
+}
+
+.glass-nav-hero {
+  background: rgba(10, 20, 42, 0.28);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-container {
+    background: rgba(10, 18, 38, 0.95);
+  }
+  .glass-nav-hero {
+    background: rgba(10, 20, 42, 0.85);
+  }
+}

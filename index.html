@@ -35,7 +35,17 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://colourflex.co.tz/" />
-  
+
+  <!-- Preconnect third-party assets -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -85,143 +95,6 @@
     "priceRange": "$"
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark: '#111111', // Rich Black (Key)
-              primary: '#007fb1', // Cyan (Contrast Optimized for WCAG AA)
-              magenta: '#EC008C', // Magenta (Process Pink from Logo)
-              yellow: '#FFF200', // Yellow (Process Yellow from Logo)
-              accent: '#94a3b8', // Slate 400 for neutral text
-              light: '#f8fafc', // Slate 50
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Sora', 'Inter', 'sans-serif'],
-          },
-          boxShadow: {
-            'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-            'glow': '0 0 20px rgba(0, 159, 227, 0.4)',
-            'premium': '0 20px 40px -4px rgba(0, 0, 0, 0.1), 0 8px 16px -4px rgba(0, 0, 0, 0.05)',
-          },
-          backdropBlur: {
-            'glass': '12px',
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    /* ── Typography tokens ────────────────────────────────────────
-       Fluid scaling via clamp(min, preferred, max).
-       Use these on h1/h2/lead text — never raw text-{size} pairs.
-    ─────────────────────────────────────────────────────────── */
-    .text-hero {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2.75rem, 7vw, 5.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-    }
-    .text-section {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(1.875rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .text-headline {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-    }
-    .text-subhead {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(1rem, 1.75vw, 1.375rem);
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    /* Smooth scrolling for anchor links */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: #f8fafc;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-feature-settings: "cv11", "ss01";
-    }
-
-    .animate-fade-in {
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .glass-container {
-      background: rgba(10, 18, 38, 0.82);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255,255,255,0.05) inset;
-    }
-
-    .glass-nav-hero {
-      background: rgba(10, 20, 42, 0.28);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    /* Fallback for browsers that don't support backdrop-filter */
-    @supports not (backdrop-filter: blur(1px)) {
-      .glass-container {
-        background: rgba(10, 18, 38, 0.95);
-      }
-      .glass-nav-hero {
-        background: rgba(10, 20, 42, 0.85);
-      }
-    }
-  </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1"
-  }
-}
-</script>
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,16 +20,25 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   // Check if we are on the home page
   const isHomePage = location.pathname === '/';
 
+  // Use IntersectionObserver instead of scroll listener for better performance
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: '-20px 0px 0px 0px' }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   // Close mobile menu on route change
@@ -42,12 +51,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const useSolidHeader = scrolled || isMenuOpen || !isHomePage;
 
   return (
-    <div className="flex flex-col min-h-screen font-sans text-brand-dark antialiased">
+    <div className="flex flex-col min-h-screen font-sans text-brand-dark antialiased relative">
       {/* Navigation */}
-      <header
-        className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'top-0' : 'top-0'
-          }`}
-      >
+      <header className="fixed w-full z-50 top-0 transition-all duration-500">
         {/* Top Bar - Company Details */}
         <div className={`w-full bg-brand-dark text-slate-400 text-[11px] font-medium tracking-wide uppercase transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-12 py-2.5 opacity-100 border-b border-white/5'}`}>
           <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -82,11 +88,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           }`}>
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex justify-between items-center">
-              {/* Text-based Logo */}
+              {/* Logo */}
               <NavLink to="/" className="flex items-center gap-2 relative z-50">
                 <img
                   src="/images/logo/Untitled-2.svg"
                   alt="Colourflex Logo"
+                  width="96"
+                  height="96"
                   className="h-16 md:h-24 w-auto transition-all duration-300"
                 />
               </NavLink>
@@ -111,9 +119,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
               {/* Mobile Menu Toggle */}
               <button
-                className="lg:hidden p-2 rounded-lg transition-colors relative z-50"
+                className="lg:hidden p-3 rounded-lg transition-colors relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-navigation"
               >
                 {isMenuOpen
                   ? <X size={24} className="text-brand-dark" />
@@ -134,7 +144,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               transition={{ duration: 0.3 }}
               className="fixed inset-0 z-40 bg-white flex flex-col pt-28 pb-10 px-6 overflow-y-auto"
             >
-              <div aria-label="Mobile Navigation" className="flex flex-col gap-4 flex-grow">
+              <nav id="mobile-navigation" aria-label="Mobile Navigation" className="flex flex-col gap-3 flex-grow">
                 {NAV_ITEMS.map((item, idx) => (
                   <motion.div
                     key={item.path}
@@ -145,7 +155,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     <NavLink
                       to={item.path}
                       className={({ isActive }) =>
-                        `block px-6 py-4 rounded-2xl text-xl font-bold transition-all ${isActive
+                        `block px-6 py-5 rounded-2xl text-lg md:text-xl font-bold transition-all min-h-[56px] flex items-center ${isActive
                           ? 'bg-brand-primary text-white shadow-lg shadow-cyan-500/20'
                           : 'text-slate-600 bg-slate-50 hover:bg-slate-100'
                         }`
@@ -155,7 +165,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     </NavLink>
                   </motion.div>
                 ))}
-              </div>
+              </nav>
 
               <motion.div
                 initial={{ opacity: 0 }}
@@ -190,8 +200,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         </AnimatePresence>
       </header>
 
+      {/* Scroll sentinel — observed to toggle scrolled header state */}
+      <div ref={sentinelRef} className="absolute top-5 left-0 right-0 h-px pointer-events-none" />
+
       {/* Main Content */}
-      <main className="flex-grow">
+      <main className="flex-grow" inert={isMenuOpen ? '' : undefined}>
         {children}
       </main>
 
@@ -233,6 +246,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img
                   src="/images/logo/Untitled-2.svg"
                   alt="Colourflex Logo"
+                  width="96"
+                  height="96"
                   className="h-20 md:h-24 w-auto object-contain -ml-4"
                 />
               </div>

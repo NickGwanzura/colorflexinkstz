@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO';
 const MD = {
   name: 'Kennedy Chisora',
   role: 'Managing Director',
-  image: '',
+  image: '/images/hero/_DSC9525.webp',
   bio: 'Kennedy leads Colourflex Inks & Coatings Ltd. with a vision for manufacturing excellence and sustainable growth across the East African market. As Managing Director, he sets the strategic direction for 2026 and beyond — driving innovation, deepening client partnerships, and positioning Colourflex as the benchmark for ink manufacturing in East Africa.'
 };
 
@@ -15,55 +15,55 @@ const TEAM: TeamMember[] = [
   {
     name: 'Carol N. Chisora',
     role: 'Administrative Manager',
-    image: '/images/team/Carol.avif',
+    image: '/images/team/Carol.webp',
     bio: 'Carol brings academic depth and practical leadership rooted in Human and Economic Development and Business Administration. She ensures smooth operations, strategic alignment, and a culture of excellence across the organisation.'
   },
   {
     name: 'Zenobius Warwo',
     role: 'Technical Manager',
-    image: '/images/team/Zenobius Warwo.JPG',
+    image: '/images/team/Zenobius Warwo.webp',
     bio: 'With over 15 years of experience, Zeno blends scientific precision and business acumen to oversee production, quality control, innovation, and operational planning.'
   },
   {
     name: 'Ally Mohammed',
     role: 'Inks Coordinator',
-    image: '/images/team/Ally Mohammed.avif',
+    image: '/images/team/Ally Mohammed.webp',
     bio: 'With 10+ years in the inks industry and a strong background in sales and marketing, Ally drives customer relationships, market growth, and delivery of tailored ink solutions.'
   },
   {
     name: 'Stanley Bobo',
     role: 'Ink Technician',
-    image: '/images/team/Stanley Bobo.PNG',
+    image: '/images/team/Stanley Bobo.webp',
     bio: 'A Chemical & Processing Systems Engineering professional ensuring accurate formulation, quality control, and safe technical production practices.'
   },
   {
     name: 'Lucy Mutahyabarwa',
     role: 'Accountant',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
+    image: '/images/team/lucy.webp',
     bio: 'A seasoned corporate accountant with expertise in compliance, financial reporting, and modern accounting systems including Focus 9 and Xero.'
   },
   {
     name: 'Salum Kaelelezi',
     role: 'Store Controller',
-    image: '/images/team/Salum Kaelelezi.avif',
+    image: '/images/team/Salum Kaelelezi.webp',
     bio: 'An inventory and procurement specialist with 8+ years of experience ensuring efficient material flow and stock accuracy.'
   },
   {
     name: 'Fatma Bakari',
     role: 'Data Processing Clerk',
-    image: '/images/team/fatima.JPG',
+    image: '/images/team/fatima.webp',
     bio: 'Focused on financial accuracy, invoice processing, and administrative efficiency through her business management background.'
   },
   {
     name: 'Eva Augustino Ngowi',
     role: 'Data Processing Clerk',
-    image: '/images/team/eva.JPG',
+    image: '/images/team/eva.webp',
     bio: 'A human-resource-trained professional supporting invoice preparation, record management, and transactional accuracy.'
   },
   {
     name: 'Saidi Athumani',
     role: 'Laboratory Assistant',
-    image: '/images/team/Saidi Athumani.PNG',
+    image: '/images/team/Saidi Athumani.webp',
     bio: 'A skilled technician with nearly a decade of experience ensuring quality control, safe chemical handling, and efficient daily production.'
   }
 ];
@@ -110,11 +110,26 @@ export const Team: React.FC = () => {
         >
           {/* Photo */}
           <div className="lg:w-2/5 h-80 lg:h-auto relative shrink-0 bg-slate-800 flex items-center justify-center">
-            <div className="flex flex-col items-center gap-4 text-white/40">
-              <div className="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center text-5xl font-extrabold text-white/60">KC</div>
-              <span className="text-sm font-medium tracking-widest uppercase">Image Coming Soon</span>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-brand-dark/40" />
+            {MD.image ? (
+              <>
+                <img
+                  src={MD.image}
+                  alt={`${MD.name} - ${MD.role}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-brand-dark/40" />
+              </>
+            ) : (
+              <>
+                <div className="flex flex-col items-center gap-4 text-white/40">
+                  <div className="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center text-5xl font-extrabold text-white/60">KC</div>
+                  <span className="text-sm font-medium tracking-widest uppercase">Image Coming Soon</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-brand-dark/40" />
+              </>
+            )}
           </div>
 
           {/* Content */}

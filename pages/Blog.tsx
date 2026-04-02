@@ -13,7 +13,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Sustainability',
     author: 'Admin',
     summary: 'How environmental regulations and consumer demand are driving the massive adoption of water-based flexo inks in East Africa.',
-    image: '/images/hero/buckets.jpg',
+    image: '/images/hero/buckets.webp',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The packaging industry is undergoing a significant transformation. As environmental concerns take centre stage globally, Tanzania and the broader East African region are no exception. Manufacturers and brands are increasingly moving away from solvent-based systems towards water-based alternatives, driven by both tightening regulatory compliance and a genuine commitment to sustainability. This is not a passing trend. It is a fundamental shift in how the industry operates.</p>
@@ -35,7 +35,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Industry News',
     author: 'Admin',
     summary: 'What brands need to know about consumer preferences in the East African market. Less is more, and smart packaging is on the rise.',
-    image: '/images/hero/_DSC9255.JPG',
+    image: '/images/hero/_DSC9255.webp',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">The shelves in Dar es Salaam's supermarkets are changing. Gone are the days of cluttered, chaotic packaging designs competing for attention with every colour in the spectrum. The modern consumer, overwhelmed by choice and increasingly informed about what they are purchasing, is gravitating towards packaging that communicates value instantly and clearly. Minimalism is no longer just a Western aesthetic preference. It is becoming a commercial imperative in East Africa.</p>
@@ -55,7 +55,7 @@ export const BLOG_POSTS: BlogPostType[] = [
     category: 'Company News',
     author: 'Admin',
     summary: 'We have upgraded our Dar es Salaam facility with state-of-the-art bead mills to improve pigment dispersion and gloss levels.',
-    image: '/images/hero/_DSC9263.JPG',
+    image: '/images/hero/_DSC9263.webp',
     content: (
       <>
         <p className="mb-6 font-medium text-lg leading-relaxed text-slate-700">We are pleased to announce the installation of two new high-speed bead mills at our production facility on Mombasa Road, Dar es Salaam. This significant capital investment marks another important milestone in our ongoing mission to provide world-class ink and coating solutions to the Tanzanian and broader East African market. It reflects our confidence in the growth of the regional packaging industry and our commitment to staying ahead of client demand.</p>

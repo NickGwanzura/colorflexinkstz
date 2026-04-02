@@ -7,25 +7,25 @@ const INDUSTRIES = [
     title: "Food & Beverages",
     desc: "Safe, non-toxic inks formulated for direct and indirect food contact packaging. Compliant with international food safety standards for the East African market.",
     items: ["Snack Packs", "Frozen Foods", "Beverage Labels", "Confectionery Wrappers", "Dairy Packaging", "Cooking Oil Pouches"],
-    image: "/images/hero/buckets.jpg"
+    image: "/images/hero/buckets.webp"
   },
   {
     title: "Flexible Packaging",
     desc: "Versatile solvent and water-based solutions for all major flexible packaging substrates including LDPE, BOPP, PET, and co-extruded films.",
     items: ["Shopping Bags", "Industrial Films", "Laminates", "Pouches", "Wrappers", "Multilayer Films"],
-    image: "/images/hero/_DSC9255.JPG"
+    image: "/images/hero/_DSC9255.webp"
   },
   {
     title: "Woven Sacks & Agriculture",
     desc: "Durable, UV-stable inks for woven polypropylene sacks used in agricultural, cement, and industrial bulk packaging across East Africa.",
     items: ["PP Woven Sacks", "Cement Bags", "Fertiliser Bags", "Animal Feed Packaging", "BOPP Laminated Sacks", "Rice Bags"],
-    image: "/images/hero/_DSC9263.JPG"
+    image: "/images/hero/_DSC9263.webp"
   },
   {
     title: "Industrial & Chemical",
     desc: "Chemically resistant, durable inks for industrial containers, hazardous goods labelling, and technical packaging applications.",
     items: ["Jerry Cans", "Drum Labels", "Chemical Containers", "Industrial Cartons", "Warning Labels", "Bulk Packaging"],
-    image: "/images/hero/_DSC9269.JPG"
+    image: "/images/hero/_DSC9269.webp"
   }
 ];
 
